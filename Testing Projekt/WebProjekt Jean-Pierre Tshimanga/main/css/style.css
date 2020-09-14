@@ -1,0 +1,127 @@
+.vid {
+	text-align: center;
+}
+
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-color: #999;
+}
+
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #999;
+	color: #444;
+	background-color: #F7FDFA;
+}
+
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #999;
+	color: #fff;
+	background-color: #26ADE4;
+}
+
+.tg .tg-tabelle {
+	vertical-align: top
+}
+
+blockquote.me {
+	text-align: center;
+}
+
+blockquote.me p::before {
+	content: open-quote;
+	color: gray;
+	font-family: Georgia, serif;
+	font-size: 200%;
+	margin-left: 0;
+}
+
+blockquote.me p::after {
+	content: close-quote;
+	color: gray;
+	font-family: Georgia, serif;
+	font-size: 200%;
+}
+
+blockquote::after {
+	content: " " attr(cite) " ";
+	font-size: 14px;
+}
+
+.SiteLayout {
+	margin: 1em 8% 1em 10%;
+	line-height: 1.2;
+}
+
+h3.Hochschule {
+	text-align: center;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.Projekt-Attribut {
+	width: 40%;
+	font-weight: bold;
+}
+
+.Projekt-Wert {
+	width: 60%;
+}
+
+img.testing-img {
+	height: 25%;
+	width: 25%;
+	border-radius: 8px;
+	margin: auto;
+	display: block;
+}
+
+img.test_types {
+	
+}
+
+p.pic_titles {
+	font-size: 12px;
+}
+
+.projekt_pic {
+	text-align: left;
+}
+
+.testbericht {
+	text-align: left;
+}
+
+.gradletest {
+	text-align: left;
+}
+
+.build {
+	text-align: left;
+}
+
+.finishtest {
+	text-align: left;
+}
+
+.reportgradle {
+	text-align: left;
+}

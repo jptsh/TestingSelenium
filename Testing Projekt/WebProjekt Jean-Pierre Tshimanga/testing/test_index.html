@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<title>Testing Website</title>
+<link rel="stylesheet" type="text/css" href="css/testing_style.css" />
+<head>
+</head>
+<body>
+
+	<div class="w3-container w3-light-grey">
+
+		<header class="w3-container w3-teal w3-section w3-round-large"
+			style="text-align: center">
+			<h1>Test-Webseite</h1>
+		</header>
+		<div class="w3-bar w3-black w3-round-large">
+			<a href="../main/index.html" class="w3-bar-item w3-hover-green">Zur&uuml;ck</a>
+		</div>
+		<div class="center w3-round-large">
+			<article class="w3-container">
+				<h1>Willkommen</h1>
+				<p>
+					Dies ist eine Webseite f&uuml;r einen automatischen Test. Geben Sie
+					unten ihren Vornamen und Nachnamen ein.<br /> Bedingungen:
+				</p>
+				<ul>
+					<li>Der Vorname und Nachname darf nur alphabetisch sein.</li>
+					<li>Der Vorname und Nachname darf nicht l&auml;nger als 10
+						Zeichen sein.</li>
+				</ul>
+				<p></p>
+				<form action="php/test_index.php" method="post"
+					class="w3-container w3-card-4 w3-round-large" id="Form1">
+
+					<p>
+						<input class="w3-input" name="vorname" type="text"
+							style="width: 90%" required> <label>Name</label>
+					</p>
+					<p>
+						<input class="w3-input" name="nachname" type="text"
+							style="width: 90%" required> <label>Nachname</label>
+					</p>
+					<p>
+						<input type="submit" form="Form1" value="senden"
+							class="w3-button w3-section  w3-ripple w3-khaki">
+					</p>
+
+				</form>
+			</article>
+		</div>
+
+		<footer class="w3-container w3-teal w3-round-large"> @ Meine
+			einfache Website mit dem W3.css framework by Jean-Pierre </footer>
+
+	</div>
+
+</body>
+</html>
+
+
+

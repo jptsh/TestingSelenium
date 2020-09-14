@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Testing Webseite liegt auf Server 192.168.178.39 -->
+<meta charset="ISO-8859-1">
+<title>Projektarbeit Testing Dokument</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body class="SiteLayout" bgcolor="#FFFFFF" text="#000000" link="#0000FF"
+	vlink="#840084" alink="#0000FF">
+
+	<h3 class="Hochschule">Vitruvius Hochschule Leipzig - Hochschule
+		f&uuml;r angewandte Wissenschaften</h3>
+	<h3 class="Hochschule">Modul Web-Technologien 1</h3>
+	<h3 class="Hochschule">Projektarbeit Testing</h3>
+	<img class="testing-img" src="bilder/testinglogo.jpg" alt="testinglogo">
+	<h3 class="Hochschule">Wintersemester 2017 / 2018</h3>
+	<h3 class="Hochschule">Studiengang Software Engineering und
+		Information Security</h3>
+
+	<table class="center">
+		<tr>
+			<td class="Projekt-Attribut">Thema:</td>
+			<td class="Projekt-Wert">Webseiten Testing</td>
+		</tr>
+		<tr>
+			<td class="Projekt-Attribut">Eingereicht von:</td>
+			<td class="Projekt-Wert">Jean-Pierre Tshimanga</td>
+		</tr>
+		<tr>
+			<td class="Projekt-Attribut">Eingereicht am:</td>
+		</tr>
+		<tr>
+			<td class="Projekt-Attribut">Betreuer:</td>
+			<td class="Projekt-Wert">Herr Dr. Hartwig</td>
+		</tr>
+	</table>
+
+	<!-- Inhaltsverzeichnis -->
+	<hr />
+	<div class="Inhaltsverzeichnis">
+		<dl>
+			<dt>
+				<b>Inhaltsverzeichnis</b>
+			</dt>
+			<dt>
+				1.<a href="#Einleitung">Einleitung</a>
+			</dt>
+			<dd>
+				<dl>
+					<dt>
+						1.1 <a href="#Einleitung-Testing">Warum Testing ?</a>
+					</dt>
+				</dl>
+			</dd>
+			<dt>
+				2.<a href="#Begriffe">Einstieg Begriffe</a>
+			</dt>
+			<dd>
+				<dl>
+					<dt>
+						2.1<a href="#Aufgaben">Aufgaben im Testing</a>
+					</dt>
+				</dl>
+			</dd>
+			<dt>
+				3.<a href="#Testing-Praxis">Testing-Praxis</a>
+			</dt>
+
+			<dd>
+				<dl>
+					<dt>
+						3.1<a href="#Virtuelle-Maschinen">Virtuelle Maschinen</a>
+					</dt>
+					<dd></dd>
+					<dt>
+						3.2<a href="#Website-Testing">Website-Testing</a>
+					</dt>
+					<dd></dd>
+					<dt>
+						3.3<a href="#Selenium">Selenium</a>
+					</dt>
+					<dd></dd>
+					<dt>
+						3.4<a href="#Testfaelle">Die Testf&auml;lle</a>
+					</dt>
+					<dd></dd>
+					<dt>
+						3.5<a href="#Fehlerberichte">Fehlerberichte</a>
+					</dt>
+					<dd>
+						<dl>
+							<dt>
+								3.5.1<a href="#Gradle">Testing mit Gradle</a>
+							</dt>
+						</dl>
+					</dd>
+				</dl>
+
+			</dd>
+			<dt>
+				4.<a href="#Fazit">Fazit</a>
+			</dt>
+			<dt>
+				5.<a href="#Quellen">Quellenangaben und Literatur</a>
+			</dt>
+			<dd>
+				<dl>
+					<dt>
+						5.1<a href="#Buecher">B&uuml;cher</a>
+					</dt>
+				</dl>
+			</dd>
+		</dl>
+	</div>
+	<hr />
+	<!-- Inhaltsverzeichnis -->
+
+
+	<!--Einleitung -->
+	<div class="Einleitung">
+		<h1>
+			<a id="Einleitung" name="Einleitung"></a>Einleitung
+		</h1>
+		<p>Website-Testing oder Web-Applikation's testen, ist das testen
+			einer Webseite oder Web-Applikation auf potentielle Programmierfehler
+			oder Bugs vor Ver&ouml;ffentlichung. Webseiten k&ouml;nnen z.B. auf
+			Sicherheitsl&uuml;cken, Barrierefreiheit und Anpassung an
+			verschiedene Ger&auml;te, Browser und Betriebssyteme
+			&uuml;berpr&uuml;ft werden.</p>
+		<p>In der vorliegenden Arbeit werden kurz g&aumlngige
+			Einstiegsbegriffe erl&aumlutert, wichtige Aufgaben im Testing benannt
+			und zwei einf&uuml;hrende Praxisbeispiel mit dem Selenium Tool
+			vorgestellt.</p>
+
+		Diese Webseite soll im ganzen einen ersten Einblick in die Thematik
+		verschaffen.
+
+		<p></p>
+
+		<!--Warum Testing ? -->
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Einleitung-Testing" name="Einleitung-Testing">Warum
+					Testing ?</a>
+			</h2>
+			<p>
+				Das Web-Applikationstesten wird eingesetzt, um die Qualit&auml;t
+				einer Webseite zu messen. Es wird dabei &uuml;berpr&uuml;ft , ob die
+				Webseite die f&uuml;r ihren Einsatz bestimmten Anforderungen
+				erf&uuml;llt. Die Tests k&ouml;nnen z.B. w&auml;hrend der
+				Softwareentwicklung durchgef&uuml;hrt werden.<br /> Einen Nachweis
+				das keine Fehler mehr vorhanden sind kann das Softwaretesten aber
+				leider nicht erbringen.
+			</p>
+			<blockquote class="me" cite="Edsger W. Dijkstra">
+				<p>
+					Program testing can be used to show the presence of bugs,<br />
+					but never show their absence!
+				</p>
+			</blockquote>
+			F&uuml;r das Softwaretesten gibt es verschiedene Definitionen. Diese
+			sind Teil der allgemeinen Softwareentwicklung und nicht speziell
+			f&uuml;r Web-Applikationen definiert. Siehe: <a
+				href="https://standards.ieee.org/findstds/standard/610.12-1990.html">ANSI/IEEE
+				Std. 610.12-1990</a>
+		</div>
+	</div>
+	<hr />
+	<!-- Einstiegs Begriffe -->
+	<div class="Einstiegs Begriffe">
+		<h1>
+			<a id="Begriffe" name="Begriffe"></a>Einstiegs Begriffe
+		</h1>
+		<table class="tg">
+			<tr>
+				<th class="tg-tabelle">Begriff<br></th>
+				<th class="tg-tabelle">Erkl&auml;rung</th>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">Bug:<br></td>
+				<td class="tg-tabelle">Der Begriff "Bug" steht als Synonym
+					f&uuml;r Programmfehler. Es bezeichnet das Fehlverhalten eines
+					Programmes.</td>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">Bug Report:<br></td>
+				<td class="tg-tabelle">Ein "Bug Report" (Fehlerbericht) ist die
+					Beschreibung eines auftretenden fehlers.</td>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">Software Feature:</td>
+				<td class="tg-tabelle">Eine spezielle Funktionalit&auml;t einer
+					Software.</td>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">User Story:<br></td>
+				<td class="tg-tabelle">Anforderungen des Benutzers an die
+					Software.</td>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">Testfall/Testcase:</td>
+				<td class="tg-tabelle">Beschreibt einen elementaren
+					funktionalen Softwaretest zur &Uuml;berpr&uuml;fung einer
+					Spezifikation.</td>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">Nachtest:</td>
+				<td class="tg-tabelle">Zum belegen, dass der Fehler behoben
+					wurde.</td>
+			</tr>
+			<tr>
+				<td class="tg-tabelle">Regressionstest:</td>
+				<td class="tg-tabelle">Die Wiederholung von Testf&auml;llen um
+					bei &Auml;nderungen neue Bugs zu vermeiden.</td>
+			</tr>
+		</table>
+
+
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Aufgaben" name="Aufgaben">Aufgaben im Testing</a>
+			</h2>
+			Es gibt verschiedenen Softwaretests. Die Tests variieren je nach
+			Produkt, Anforderungen und Service.<br /> Au&szlig;erdem
+			unterscheiden sich Tests f&uuml;r Web-Anwendungen von denen f&uuml;r
+			Desktop Anwendungen.<br />
+			<br /> <img class="test_types" src="bilder/test_types1440.png"
+				alt="test_types">
+			<p class="pic_titles">https://usersnap.com/de/blog/software-testing/</p>
+			<p />
+			<ul>
+				<p></p>
+				<li>Mit den verschiedenen Softwaretests unterscheiden sich die
+					Aufgaben.<br /> Allgemein k&ouml;nnen Aufgaben f&uuml;r das
+					Softwaretesting z.B. das testen von neu implementierten Features
+					oder User Stories sein.
+				</li>
+				<p></p>
+
+				<p></p>
+				<li>Oder das testen von neu erstellten Hompages oder
+					Web-Anwendungen. Der Tester sucht dabei nach Bugs in der Anwendung.<br />
+					Ist ein Bug gefunden wird dieser gemeldet. <br />Die Entwickler
+					beheben den Fehler und es wird ein Nachtest gemacht um zu
+					&uuml;berpr&uuml;fen, ob der Fehler noch besteht.
+				</li>
+				<p></p>
+
+				<p></p>
+				<li>Der Regressionstest wird vom Tester durchgef&uuml;hrt um
+					bestehende Softwarefeatures auf Fehler zu &uuml;berpr&uuml;fen. Es
+					ist bei Programm&auml;nderungen wichtig sicherzustellen, dass alle
+					bisherigen Programmfeatures weiterhin funktionieren.</li>
+				<p></p>
+
+				<p></p>
+				<li>Explorative Tests werden von Testern durchgef&uuml;hrt ohne
+					ein konkreten Fehler im Blick zu haben. Der Tester testet
+					erfahrungsgem&auml;&szlig; um z.B. fehlerhaftes Verhalten der
+					Anwendung oder offensichtlich unlogische Abl&auml;ufe zu finden.</li>
+				<p></p>
+
+				<p></p>
+				<li>Der Tester erstellt auch die Testf&auml;lle die
+					gepr&uuml;ft werden sollen.</li>
+				<p></p>
+			</ul>
+		</div>
+	</div>
+	<hr />
+	<!--Testing Praxis -->
+	<div class="Testing-Praxis">
+		<h1>
+			<a id="Testing-Praxis" name="Testing-Praxis"></a>Testing-Praxis
+		</h1>
+		<p>
+			In der Praxis k&ouml;nnen einige Hilfsmittel und Tools verwendet
+			werden um das Testen zu erleichtern.<br /> Es gibt das manuelle und
+			automatisierte Testing. Zweiteres werde ich weiter unten mit einem
+			Praxisbeispiel kurz vorf&uuml;hren.<br /> Manuelle Tests werden vom
+			Tester von Hand und ohne Unterst&uuml;tzung von tools oder Skripts
+			ausgef&uuml;hrt. Manuelles Testing ist dann von Vorteil, wenn
+			Testf&auml;lle nur ein oder zweimal getestet werden m&uuml;ssen.
+			Automatisierte Tests basieren auf manuellen Tests die Tests
+			m&uuml;ssen also zuerst von Hand geschrieben werden.
+		</p>
+
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Virtuelle-Maschinen" name="Virtuelle-Maschinen">Virtuelle-Maschinen</a>
+			</h2>
+			Um die Web-Applikation oder Webseite zeitgleich auf verschiedene
+			Betriebssysteme zu testen, k&ouml;nnen virtuelle Maschinen verwendet
+			werden.<br />Auf den Maschinen k&ouml;nnen mehrere Systeme
+			gleichzeitig laufen. So kann man z.B. die Webseite auf einem Linux
+			Betriebssystem oder einem Windows Betriebssystem pr&uuml;fen. Die
+			virtualisierungssoftware Oracle VM VirtualBox erm&ouml;glicht das
+			erstellen von Maschinen. <a
+				href="https://www.virtualbox.org/wiki/Downloads">www.virtualbox.org</a><br />
+			<br /> <img class="vBox" src="bilder/virtualBox.png" alt="vBox1">
+			<p class="pic_titles">VirtualBox Software</p>
+		</div>
+
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Website-Testing" name="Website-Testing">Website-Testing</a>
+			</h2>
+			Um ein praktisches Beispiel vom Testen zu haben werde ich hier eine
+			kleine Web-Applikation vorstellen.<br /> Die Web-Applikation wird
+			auf einem LAMP Server installiert. LAMP bedeutet Linux, Apache, MySQL
+			und PHP. Der LAMP Server l&auml;ft auf einer virtuelle Maschine in
+			der Software VirtualBox. <br />
+			<br />Die Installierten Komponente:<br />
+			<br />
+			<table class="tg">
+				<tr>
+					<th class="tg-tabelle">Betriebssystem<br></th>
+					<th class="tg-tabelle">FTP</th>
+					<th class="tg-tabelle">Webserver</th>
+					<th class="tg-tabelle">Datenbank</th>
+					<th class="tg-tabelle">PHP</th>
+				</tr>
+				<tr>
+					<td class="tg-tabelle">Ubuntu Server 16.04<br></td>
+					<td class="tg-tabelle">vsftpd</td>
+					<td class="tg-tabelle">Apache2</td>
+					<td class="tg-tabelle">mysql</td>
+					<td class="tg-tabelle">php7.1</td>
+				</tr>
+			</table>
+			<br /> Die Webseite wird mit Html5 und dem W3.css <a
+				href="https://www.w3schools.com/w3css/">(W3Schools)</a> framework
+			benutzerfreundlich gestaltet <a href="../testing/test_index.html">Siehe 	<!-- Testing Webseite  -->
+				hier</a>. Es befindet sich im article Container der Webseite eine Form.
+			Diese Form wird verwendet um einen Vornamen und einen Nachnamen
+			aufzunehmen. Die Werte werden dann an die Seite test_index.php
+			gesendet und &uuml;berpr&uuml;ft. Die PHP Anwendung pr&uuml;ft die
+			Eingaben auf:
+			<ol>
+				<li>Anzahl der Zeichen d&uuml;rfen maximal 10 Zeichen lang
+					sein.</li>
+				<li>Eingabe darf nur alphabetisch sein.</li>
+			</ol>
+		</div>
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Selenium" name="Selenium">Selenium</a>
+			</h2>
+			Um die Webseite mit den Selenium Tools zu testen ben&ouml;tigt man:<br />
+			<ul>
+				<li><a href="https://www.seleniumhq.org/download/">Selenium
+						Standalone Server, Selenium Client & WebDriver Language Bindings,</a><br /></li>
+				<li><a href="https://www.java.com/de/">Java,</a><br /></li>
+				<li><a
+					href="http://www.eclipse.org/downloads/eclipse-packages/Eclipse">Eclipse
+						IDE</a> <br /></li>
+				<li><a href="https://github.com/mozilla/geckodriver/releases">GeckoDriver</a><br /></li>
+				<li><a href="https://www.mozilla.org/de/firefox/new/">Firefox</a><br /></li>
+				<li><a
+					href="https://sourceforge.net/projects/junit/files/junit/">JUnit</a>
+				</li>
+			</ul>
+
+			Die Installation der einzelnen Komponente sollte man sich
+			entsprechend im Manual der Hersteller ansehen. Allgemein werden die
+			Java Komponente und Bibliotheken von den Selenium Tools im
+			entsprechenden Eclipse Projekt eingebunden. Der GeckoDriver erlaubt
+			dann den Zugriff &uuml;ber Java Code auf den Firefox Browser. In Java
+			k&ouml;nnen JUnit Tests geschrieben werden um Testcases zu
+			pr&uuml;fen.<br />
+			<br />
+			<div class="vid">
+				<iframe width="420" height="315"
+					src="https://www.youtube.com/embed/2SzdhH8xAX4"> </iframe>
+			</div>
+			<br />
+			<br /> Selenium automatisiert den Web-Browser und ist kompatibel mit
+			dem Firefox Browser. Es unterst&uuml;tzt die Programmiersprachen
+			Java,C#,Ruby,Python und Javascript. Nach hinzuf&uuml;gen der
+			Komponente sieht die Projekt Struktur im Eclipse IDE so aus:<br />
+			<br /> <img class="projekt_pic" src="bilder/projekt_struk.png"
+				alt="projekt">
+		</div>
+		<br />
+		<br />
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Testfaelle" name="Testfaelle">Die Testf&auml;lle</a>
+			</h2>
+			Das testen der Webseite mit den Selenium Tools erfolgt im Eclipse
+			IDE. Es wird ein JUnit Projekt erstellt und anschlie&szlig;end die
+			Tests im Java Code geschrieben. Die Test f&auml;lle werden mit @Test
+			beschriftet.<br />
+			<br /> <img class="projekt_pic" src="bilder/testcases.png"
+				alt="testcases"> <br /> Es wird getestet auf:
+			<ul>
+				<li>Title im Header</li>
+				<li>Eingabe des Vornamens und Nachnamen und ausf&uuml;hren des
+					Submit Button.</li>
+			</ul>
+			Der Titel der Webseite soll lauten "Testing Website". Wird die
+			Bedingung erf&uuml;llt gibt die Assert Anweisung ein true zur&uuml;ck
+			und der erste Test war erfolgreich.<br />
+			<p>
+				Der zweite Test f&uuml;llt selbstst&auml;ndig das Formular aus und
+				bet&auml;tigt den Submit Button. Auf der Nachfolgenden Webseite wird
+				dann der Text "alphabetisch" im Quelltext der Seite gesucht.<br />
+			</p>
+			<p>Findet die Anweisung den Text bedeutet dies das der
+				eingegebene Name ung&uuml;ltig ist. Wir testen also, ob die
+				Fehlerhafte Eingabe auch als falsch erkannt wird. Der Vorname
+				Jean-Pierre enth&auml;llt das Zeichen "-" und ist somit nicht
+				alphabetisch. Die Assert Funktion gibt also auch hier ein True
+				zur&uuml;ck.</p>
+		</div>
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Fehlerberichte" name="Fehlerberichte">Fehlerberichte</a>
+			</h2>
+			Zu den Testf&auml;llen werden Fehlerberichte generiert. Die
+			Fehlerberichte geben auskunft, ob alle Testf&auml;lle erfolgreich
+			verlaufen sind. Man kann das Java Projekt mit JUnit ausf&uuml;hren
+			und bekommt dann im JUnit Fenster einen kleinen Test Status
+			angezeigt. <br />
+			<br /> <img class="testbericht" src="bilder/testbericht.png"
+				alt="testbericht"> <br />
+			<br /> Die beiden Tests waren in dem Fall erfolgreich.
+		</div>
+		<div class="Section2">
+			<h3 class="Section2">
+				<a id="Gradle" name="Gradle">Testing mit Gradle</a>
+			</h3>
+			Gradle ist ein Build-Management Tool und basiert auf Java.
+			<p>Um Selenium und Gradle unter Eclipse zu verwenden
+				ben&ouml;tigt man einige weitere Komponente. Ich werde hier Gradle
+				verwenden um einen HTML Report f&uuml;r die Testf&auml;lle
+				auszugeben.</p>
+			<p>
+				Die Installation des Gradle-4.10 ist gut Dokumentiert sodass keine
+				Schwierigkeiten entstehen. <a href="https://gradle.org/install/">Gradle
+					Installation Guide</a>
+			</p>
+			<p>Nach der Installation muss darauf geachtet werden das die
+				JAVA_HOME Variable in der Umgebungsvariable richtig gesetzt wird.
+				F&uuml;r die aktuelle Java Version lautet der Pfad unter Windows
+				"C:\Program Files\Java\jdk-9.0.4". Wenn Gradle Installiert ist kann
+				man dies in der Konsole mit dem Befehl "gradle"
+				&uuml;berpr&uuml;fen.</p>
+
+			In der Eclipse Umgebung kann man sich das Gradle Plugin Buildship
+			dazu Installieren <a
+				href="https://github.com/eclipse/buildship/blob/master/docs/user/Installation.md">Github
+				Eclipse Buildship Plugin</a> Erstellt man ein neues Gradle Projekt
+			sollte der Projekt Ordner so aussehen:<br />
+			<br /> <img class="gradletest" src="bilder/gradletest.png"
+				alt="gradletest"> <br />
+			<br /> Wieder werden die Selenium Bibliotheken wie zuvor
+			hinzugef&uuml;gt. Man &Ouml;ffnet die Datei build.gradle und kann
+			dort die n&ouml;tigen dependencies f&uuml;r Selenium eintragen. Auf
+			der Webseite <a
+				href="https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java">https://mvnrepository.com</a>
+			wird man f&uuml;r selenium-java f&uuml;ndig.<br />
+			<br /> <img class="build" src="bilder/build.png" alt="build"> <br />
+			<br /> Das Build Skript enth&auml;lt auch Anweisungen im Test Block
+			f&uuml;r das Ausgabeformat des Test Reportes. Die Datei WebTest.java
+			im Projektverzeichnis GradleTestProject liegt unter src/test/java.
+			WebTest.java unterscheidet sich nicht von dem Test unter <a
+				href="#Testfaelle">3.3</a>. Mit der Kommandozeile navigiert man in
+			das Projektverzeichnis und f&uuml;hrt das Kommando "gradle test" aus.
+			Gradle sollte zuerst alle Abh&auml;ngigkeiten installieren und dann
+			erfolgreich die Tests durchlaufen.<br />
+			<br /> <img class="finishtest" src="bilder/finishtest.png"
+				alt="finishtest"><br />
+			<br /> Der Test Report liegt dann im Verzeichnis
+			"\GradleTestProject\build\reports\tests\test".<br />
+			<br /> Abschlie&szlig;end der HTML Report:<br />
+			<br /> <img class="reportgradle" src="bilder/reportgradle.png"
+				alt="reportgradle">
+		</div>
+	</div>
+	<div class="Fazit">
+		<h1>
+			<a id="Fazit" name="Fazit"></a>Fazit
+		</h1>
+		Testing ist ein sehr umfangreiches Gebiet. Wichtige Begriffe aus Web-
+		und Desktop-Applikation Testing &uuml;berscheiden sich aber. Die
+		Aufgaben f&uuml;r den Tester k&ouml;nnen sehr unterschiedlich sein und
+		sind teils abh&auml;ngig vom Produkt. Manuelle Tests sind
+		aufw&auml;ndig, dienen aber als Vorlage f&uuml;r automatisierte Tests.
+		Ein hilfreiches Framework ist Selenium. Nutzt man au&szlig;erdem das
+		richtige Build Tool wie z.B. Gradle stehen einem weitere
+		n&uuml;tzliche Optionen zur Verf&uuml;gung.
+	</div>
+
+	<div class="Quellen">
+		<h1>
+			<a id="Quellen" name="Quellen"></a>Quellenangaben und Literatur
+		</h1>
+		https://de.wikipedia.org/wiki/Softwaretest<br />
+		https://en.wikipedia.org/wiki/Software_feature<br />
+		https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers<br />
+		https://de.wikipedia.org/wiki/User-Story<br />
+		https://de.wikipedia.org/wiki/Regressionstest<br />
+		https://usersnap.com/de/blog/software-testing/<br />
+		https://www.testbirds.de/leistungen/quality-assurance/exploratives-bug-testing/<br />
+		https://produkt-manager.net/2011/exploratory-testing-scrum-teams-testen-wie-touristen/<br />
+		<div class="Section1">
+			<h2 class="Section1">
+				<a id="Buecher" name="Buecher">B&uuml;cher</a>
+			</h2>
+			Selenium Webdriver: Software Automation Testing Secrets Revealed von
+			Narayanan Palani<br /> Mastering Selenium WebDriver von Mark Collin<br />
+			Gradle: Ein kompakter Einstieg in das Build-Management-System von
+			Joachim Baumann<br />
+		</div>
+	</div>
+</body>
+</html>
+
